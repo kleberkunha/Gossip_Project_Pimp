@@ -1,0 +1,10 @@
+<div class="container">
+<h2>Liste de potins</h2>
+
+
+<div class="list-group">
+<% params[:data_gossip].each do |g| %>
+  <a href="/gossip/<%= g[0] %>" class="list-group-item list-group-item-action"><%= g[1] %> by <%= g[2] %></a></a>
+<% end %>
+</div>
+
