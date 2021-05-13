@@ -22,3 +22,9 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+Welcome!! here you will find the Project Gossip.
+
+Be free to have a look.
+
+All the gems are installed in the Gemfile.
