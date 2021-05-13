@@ -1,16 +1,12 @@
 <div class="container">
-<div class="jumbotron">
-  <h1 class="display-4">Hello, world!</h1>
-  <% aut = User.(params[:id_user]) %>
-  <p class="lead">My name is <%= aut.first_name %>, <%= aut.last_name %></p>
-  <hr class="my-4">
-  <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
-  <p class="lead">
-    <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
-  </p>
+  <div class="jumbotron">
+    <h1 class="display-4">Hello, world!</h1>
+    <% aut = User.(params[:id_user]) %>
+    <p class="lead">My name is <%= aut.first_name %>, <%= aut.last_name %></p>
+    <hr class="my-4">
+    <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+    <p class="lead">
+      <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+    </p>
+  </div>
 </div>
-
-
-ID | FIRST_NAME | LAST_NAME | DESCRIPTION                    | EMAIL            | AGE | CITY_ID | CREATED_AT              | UPDATED_AT             
----|------------|-----------|--------------------------------|------------------|-----|---------|-------------------------|------------------------
-1  | Isidro     | Friesen   | ["Beatae perspiciatis aut."... | adam@example.org | 226 | 1       | 2021-05-10 09:25:26     | 2021-05-10 09:25:26  

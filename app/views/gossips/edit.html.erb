@@ -1,0 +1,17 @@
+<h1>Edit the article</h1>
+<%= form_for @gossip do |g|%>
+    <div class="form-group">
+        <label>Article title</label>
+        <%= g.text_field :title, class: 'form-control'%>
+    </div>
+    <div class="form-group width: 500px;">
+        <label>Article content</label>
+        <%= g.text_area :content, class: 'form-control'%>
+    </div>
+    <div class="form-group">
+        <button type="submit">Modify the Article</button>
+    </div>
+    <button type="button" class="btn">
+        <%= link_to("Go back to Home page", index_path) %> 
+    </button>
+<%end%>

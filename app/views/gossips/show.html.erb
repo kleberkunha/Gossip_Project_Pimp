@@ -1,0 +1,53 @@
+<div class="container">
+    <div class="card text-center">
+        <div class="card-header">
+            <%= Gossip.find(params[:id]).title%>
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">Content : <%= Gossip.find(params[:id]).content %></h5>
+            <p class="card-text">Author : <%= Gossip.find(params[:id]).user.first_name %> <%= Gossip.find(params[:id]).user.last_name %></p>
+            <p class="card-text">City : <a href="<%= city_path(City.find(Gossip.find(params[:id]).user.city_id).id)%>"><%= City.find(Gossip.find(params[:id]).user.city_id).name %></a></p>
+            <button type="button" class="btn">
+                <%= link_to("See more about the author", user_path(Gossip.find(params[:id]).user_id)) %>
+            </button>
+            <button type="button" class="btn">
+                 <%= link_to("Go back to Home page", index_path) %>
+            </button>
+        </div>
+        <div class="card-footer text-muted">
+            15 days ago
+        </div>
+    </div>
+</div>
+<!------------------ Forms pour ajout de commentaires ------------------->
+<%= form_tag gossip_comments_path(controller: :comments, action: :create, gossip_id: @gossip.id), method: "post" do %>
+    <%= label_tag 'Content' %>
+    <%= text_area_tag 'content', @comment.content, class: "form-control" %>
+    <br/>
+
+    <%= submit_tag "Add comment", class: "btn btn-primary mb-5" %> 
+<% end %>
+
+<!------------------ Affichage des commentaires ------------------->
+<div class="list-group mx-auto">
+
+    <% Comment.all.where(gossip_id: @gossip.id).reverse.each do |comment| %>
+
+    <div class="list-group-item mb-2">
+        <div class="row">
+            <div class="col-9">
+                <p class="mb-1"><%= comment.content %></p>
+                <small>
+                    by <%= comment.user.first_name %> <%= comment.user.last_name %>
+                </small>
+            </div>
+            <div class="col-3 text-right">
+                <p>
+                    <a href="<%= edit_gossip_comment_path(@gossip.id, comment.id) %>" class="btn btn-primary">Modifier le commentaire</a>
+                </p>
+            </div>
+        </div>
+        <% end %>
+    </div>
+</div>
+
