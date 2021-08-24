@@ -1,4 +1,4 @@
-In this aplication you can Register, login, create a post, delete it, edit and read post of other people.
+### In this aplication you can Register, login, create a post, delete it, edit and read post of other people.
 ![Gossip_main](https://user-images.githubusercontent.com/29848785/130367123-789820b5-d7b9-4b08-932d-dfd4a93e878c.png)
 ![Gossip_login](https://user-images.githubusercontent.com/29848785/130367126-fc73eb51-9b1a-44a7-b475-d13626916262.png)
 
